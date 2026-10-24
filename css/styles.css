@@ -1,0 +1,440 @@
+/* 1950s GOOGIE & MID-CENTURY MODERN ARCHITECTURE STYLESHEET */
+:root {
+    --atomic-teal: #008f88;
+    --atomic-aqua: #23dbcf;
+    --coral-flamingo: #ff5e57;
+    --butter-yellow: #fff37a;
+    --chartreuse: #c4d726;
+    --atomic-slate: #1c232c;
+    --night-navy: #0d131a;
+    --creamy-beige: #fef8eb;
+    --concession-tan: #f5eedb;
+    --neon-pink: #ff2a7a;
+    --chrome-silver: #d1d8e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--night-navy);
+    color: var(--creamy-beige);
+    font-family: 'Space Mono', Courier, monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    background-image: 
+        radial-gradient(var(--atomic-teal) 1px, transparent 1px),
+        radial-gradient(rgba(255, 94, 87, 0.25) 1.5px, transparent 1.5px);
+    background-size: 40px 40px, 80px 80px;
+    background-position: 0 0, 20px 20px;
+    padding: 30px 16px 60px;
+}
+
+/* Master Googie Enclosure */
+.googie-container {
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* =======================================================
+   GOOGIE NEON MARQUEE & CANTILEVER SIGNBOARD
+   ======================================================= */
+.googie-marquee {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px 25px;
+}
+
+/* 45-degree Angled Roof Pylon */
+.pylon-spire {
+    position: absolute;
+    top: -20px;
+    left: 8%;
+    width: 14px;
+    height: 180px;
+    background: linear-gradient(180deg, var(--butter-yellow) 0%, var(--coral-flamingo) 100%);
+    transform: rotate(22deg);
+    box-shadow: 0 0 15px rgba(255, 243, 122, 0.8), 4px 4px 0px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    border-radius: 4px;
+}
+
+.pylon-spire::after {
+    content: "★";
+    position: absolute;
+    top: -18px;
+    left: -11px;
+    font-size: 32px;
+    color: var(--butter-yellow);
+    text-shadow: 0 0 16px #fff;
+}
+
+/* Cantilever beam crossing overhead */
+.cantilever-beam {
+    position: absolute;
+    top: 25px;
+    left: 4%;
+    right: 4%;
+    height: 8px;
+    background: var(--atomic-aqua);
+    transform: skewY(-2.5deg);
+    box-shadow: 0 0 12px var(--atomic-aqua), 0 5px 0 #000;
+    z-index: 1;
+}
+
+.marquee-signboard {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #273646 0%, #151e28 100%);
+    border: 4px solid var(--butter-yellow);
+    padding: 32px 48px;
+    transform: rotate(-1.5deg);
+    box-shadow: 12px 14px 0px var(--coral-flamingo), 16px 18px 0px #000;
+    border-radius: 8px 36px 8px 36px;
+    max-width: 900px;
+    width: 100%;
+    z-index: 3;
+}
+
+.atomic-sparkle {
+    position: absolute;
+    color: var(--butter-yellow);
+    font-size: 36px;
+    animation: sparkle 2s infinite alternate;
+}
+.atomic-sparkle.top-left { top: -14px; left: 16px; }
+.atomic-sparkle.top-right { top: -14px; right: 16px; }
+.atomic-sparkle.bottom-mid { bottom: -18px; left: 50%; transform: translateX(-50%); }
+
+@keyframes sparkle {
+    0% { transform: scale(0.8) rotate(0deg); opacity: 0.7; }
+    100% { transform: scale(1.2) rotate(45deg); opacity: 1; text-shadow: 0 0 15px var(--butter-yellow); }
+}
+
+.sign-pill {
+    display: inline-block;
+    background-color: var(--coral-flamingo);
+    color: #fff;
+    font-family: 'Righteous', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 4px 18px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    box-shadow: 3px 3px 0 #000;
+}
+
+h1.marquee-title {
+    font-family: 'Bungee Shade', cursive;
+    font-size: clamp(34px, 6vw, 68px);
+    color: var(--butter-yellow);
+    text-shadow: 
+        0 0 10px rgba(255, 243, 122, 0.8),
+        3px 3px 0px var(--coral-flamingo),
+        6px 6px 0px #000;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+}
+
+.marquee-subtitle {
+    font-family: 'Righteous', sans-serif;
+    font-size: clamp(12px, 1.8vw, 17px);
+    letter-spacing: 3px;
+    color: var(--atomic-aqua);
+    text-shadow: 0 0 8px rgba(35, 219, 207, 0.6);
+}
+
+.marquee-tail {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.tail-flag {
+    background-color: var(--chartreuse);
+    color: #12181f;
+    font-family: 'Righteous', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 12px;
+    transform: skewX(-14deg);
+    box-shadow: 3px 3px 0 #000;
+}
+
+.tail-star {
+    color: var(--coral-flamingo);
+    font-size: 18px;
+    text-shadow: 0 0 8px var(--coral-flamingo);
+}
+
+/* Parabolic Boomerang Divider */
+.atomic-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 30px 0 50px;
+}
+
+.swoop-line {
+    flex: 1;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--atomic-teal), var(--butter-yellow));
+    border-radius: 2px;
+}
+
+.boomerang-badge {
+    background: var(--atomic-teal);
+    color: var(--butter-yellow);
+    font-family: 'Righteous', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 6px 20px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    box-shadow: 4px 4px 0 #000;
+}
+
+/* =======================================================
+   6-FILM GOOGIE DINER / DRIVE-IN GRID
+   ======================================================= */
+.drive-in-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 48px 32px;
+}
+
+/* Asymmetrical Diner Card */
+.diner-card {
+    background: linear-gradient(160deg, #1f2b37 0%, #131a22 100%);
+    border: 3px solid var(--atomic-aqua);
+    border-radius: 6px 32px 6px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 8px 10px 0px rgba(0, 143, 136, 0.6), 12px 14px 0px #000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.diner-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 12px 16px 0px var(--coral-flamingo), 16px 20px 0px #000;
+    border-color: var(--butter-yellow);
+}
+
+/* Slanted Roofplate */
+.card-cantilever {
+    background: var(--atomic-teal);
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--night-navy);
+    border-radius: 2px 28px 0 0;
+}
+
+.plate-number {
+    font-family: 'Righteous', sans-serif;
+    color: var(--butter-yellow);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.format-pill {
+    background: var(--coral-flamingo);
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 0 #000;
+}
+
+/* Tilted Poster Shrine with Retro Drop Shadow */
+.poster-caddy {
+    padding: 22px 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, rgba(35, 219, 207, 0.1) 0%, transparent 70%);
+}
+
+.poster-angle-frame {
+    border: 3px solid var(--butter-yellow);
+    padding: 6px;
+    background: #000;
+    box-shadow: 6px 8px 0px var(--coral-flamingo), 8px 10px 0px #000;
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease;
+}
+
+.diner-card:hover .poster-angle-frame {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.vintage-poster {
+    display: block;
+    width: 250px;
+    height: 370px;
+    object-fit: cover;
+    border: 1px solid var(--atomic-teal);
+}
+
+/* Card Body & Editorial Critique */
+.card-body {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.year-stamp {
+    font-family: 'Righteous', sans-serif;
+    color: var(--chartreuse);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+
+h2.film-title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 24px;
+    color: var(--butter-yellow);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    min-height: 60px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.credits-strip {
+    font-size: 12.5px;
+    color: #a8b6c4;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    border-bottom: 1px dashed var(--atomic-teal);
+    padding-bottom: 10px;
+}
+
+.credits-strip strong {
+    color: var(--creamy-beige);
+}
+
+.speaker-quote {
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--atomic-aqua);
+    background: rgba(0, 143, 136, 0.15);
+    border-left: 4px solid var(--coral-flamingo);
+    padding: 8px 12px;
+    margin-bottom: 14px;
+    border-radius: 0 8px 8px 0;
+}
+
+.critique-copy {
+    font-size: 14px;
+    color: var(--creamy-beige);
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.55;
+    flex-grow: 1;
+}
+
+/* Concession Strip Verdict */
+.concession-box {
+    margin-top: auto;
+    border-top: 2px solid var(--atomic-teal);
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rating-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.star-rating {
+    color: var(--butter-yellow);
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 6px rgba(255, 243, 122, 0.6);
+}
+
+.grade-pill {
+    background: var(--coral-flamingo);
+    color: #fff;
+    font-family: 'Righteous', sans-serif;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.verdict-text {
+    font-family: 'Righteous', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 1.5px;
+    color: var(--chartreuse);
+}
+
+/* =======================================================
+   GOOGIE ROADSIDE FOOTER
+   ======================================================= */
+.googie-footer {
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px 20px;
+    border-top: 4px solid var(--atomic-aqua);
+}
+
+.footer-pylon {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.pylon-ring {
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--butter-yellow);
+    border-radius: 50%;
+    transform: rotate(45deg) skewX(20deg);
+}
+.pylon-ring.mid { border-color: var(--coral-flamingo); }
+.pylon-ring.small { border-color: var(--chartreuse); }
+
+.footer-banner {
+    font-family: 'Righteous', sans-serif;
+    color: var(--butter-yellow);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.footer-creds {
+    font-size: 12px;
+    color: #8c9ea8;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .marquee-signboard { padding: 20px 16px; border-radius: 6px 20px 6px 20px; }
+    .drive-in-grid { grid-template-columns: 1fr; }
+    .vintage-poster { width: 220px; height: 325px; }
+    h2.film-title { min-height: auto; }
+}
